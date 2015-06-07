@@ -18,12 +18,31 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
-  <gap:plugin name="org.apache.cordova.file.FileUtils" />
-  <gap:plugin name="org.apache.cordova.device.Device" />
-  <gap:plugin name="com.ionic.keyboard.IonicKeyboard" />
-  <gap:plugin name="org.apache.cordova.filetransfer.FileTransfer" />
-  <gap:plugin name="nl.xservices.plugins.SocialSharing" />
-  <gap:plugin name="nl.xservices.plugins.Toast" />
-  <gap:plugin name="org.apache.cordova.splashscreen.SplashScreen" />
-  <gap:plugin name="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+  <feature name="Keyboard">
+        <param name="android-package" value="com.ionic.keyboard.IonicKeyboard" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
+    <feature name="SocialSharing">
+        <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+    </feature>
+    <feature name="Toast">
+        <param name="android-package" value="nl.xservices.plugins.Toast" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="BarcodeScanner">
+        <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+    </feature>
 </widget>
