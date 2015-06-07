@@ -18,4 +18,12 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+  <gap:plugin name="org.apache.cordova.file.FileUtils" />
+  <gap:plugin name="org.apache.cordova.device.Device" />
+  <gap:plugin name="com.ionic.keyboard.IonicKeyboard" />
+  <gap:plugin name="org.apache.cordova.filetransfer.FileTransfer" />
+  <gap:plugin name="nl.xservices.plugins.SocialSharing" />
+  <gap:plugin name="nl.xservices.plugins.Toast" />
+  <gap:plugin name="org.apache.cordova.splashscreen.SplashScreen" />
+  <gap:plugin name="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
 </widget>
