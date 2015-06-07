@@ -1,0 +1,118 @@
+/* Empty. Add your own CSS if you like */
+
+ion-view {
+    background-color: #424242;
+}
+
+.no-events{
+    color: ghostwhite;
+    position: fixed;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    padding: 5%;
+}
+
+.view-container {
+    position: inherit !important;
+}
+
+#links {
+    text-align: center;
+    margin-top:5px;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+#links img{
+    margin: 1px -2px;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+#gallery-loader-gif {
+    padding-top: 50%;
+}
+
+#save div{
+    width: 200px;
+    height: 200px;
+}
+
+/*======================image modal============================*/
+
+
+.transparent {
+    background: transparent !important;
+}
+.image-modal {
+    width: 100% !important;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+}
+.fullscreen-image {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    overflow: auto;
+    position: absolute;
+    opacity: 1.0 !important;
+}
+
+.fullscreen-btn {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.baby-black:not(img){
+    background: black !important;
+    opacity: 0.7;
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.image-modal button {
+    float: right;
+    font-size: 40px;
+    z-index: 9999;
+}
+
+.button-assertive.ion-trash-b
+{
+    font-size: 40px;
+}
+
+
+.pull-right{
+    float: right;
+}
+
+.title{
+    font-weight: bold;
+}
+
+ .item-content{
+    background-color: rgba(245, 248, 245, 0.84) !important;
+    color: rgba(46, 46, 46, 0.64) !important;
+}
+

@@ -1,0 +1,25 @@
+<ion-view view-title="הוספת אירוע">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-close-round" menu-toggle="right"
+                ng-click="close()"></button>
+    </ion-nav-buttons>
+    <ion-content>
+
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">קוד אירוע</span>
+                    <input type="text" ng-model="eventData.Id">
+                </label>
+                <label class="item">
+                    <button class="button button-block button-positive" ng-click="addEvent()" >הוסף אירוע</button>
+
+                </label>
+                <label class="item">
+                    <button class="button button-block button-dark" ng-click="qrCode()">סרוק קוד</button>
+
+                </label>
+
+            </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,29 @@
+<div ng-controller="FullImageCtrl">
+    <div class="modal image-modal transparent" ng-click="closeModal()">
+    <div class="baby-black">
+
+    </div>
+        <ion-pane class="transparent">
+            <button class="button button-icon button-clear ion-ios-download" menu-toggle="right" ng-click="download($event)"></button>
+            <button class="button button-icon button-clear ion-share" menu-toggle="right" ng-click="share($event)"></button>
+            <button class="button button-icon button-clear ion-alert-circled" menu-toggle="right" ng-click="report($event, imageSrc)"></button>
+
+            <img ng-src="{{imageSrc}}" class="fullscreen-image" ng-click="showOptions($event)"/>
+
+            <!--<ion-slide-box show-pager="false"  on-slide-changed="slideChanged(index)">-->
+                <!--<ion-slide ng-repeat="link in links">-->
+                    <!--<ion-content>-->
+                        <!--<div ng-if="$index >= (currentSlide-2) && $index <= (currentSlide+2)">-->
+
+                            <!--<ion-item class="item-accordion" >-->
+                                <!--<img ng-src="{{imageSrc}}" class="fullscreen-image" ng-click="showOptions($event)"/>-->
+                            <!--</ion-item>-->
+                        <!--</div>-->
+                    <!--</ion-content>-->
+                <!--</ion-slide>-->
+            <!--</ion-slide-box>-->
+
+
+        </ion-pane>
+    </div>
+</div>

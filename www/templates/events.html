@@ -1,0 +1,29 @@
+<ion-view  style="background-color: #424242;" title="אירועים" cache-view="false">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-plus-round" menu-toggle="right"
+                ng-click="addEvent()"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div ng-model="eventCount" ng-if="eventCount == 0">
+            <p class="no-events">
+                להכנסת אירוע חדש
+                לחץ על הפלוס
+            </p>
+        </div>
+        <ion-list class="dark">
+            <!--ui-sref="app.event({event: {{event.eventId}} })"-->
+            <ion-item ng-repeat="event in events" ng-if="event.eventId"
+                      href="#/event/{{event.eventId}}">
+
+
+                <span class="title">{{event.title}}</span>
+                <span class="event-id pull-right">{{event.eventId}}</span>
+                <p>{{event.description}}</p>
+                <ion-option-button class="button-assertive ion-trash-b"
+                                   ng-click="deleteEvent(event.eventId)">
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>
