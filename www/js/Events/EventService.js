@@ -77,36 +77,11 @@ angular.module('photofi.event.service', ['ngCordova'])
 
     .factory('saveFileFrom', [function () {
 
-        function guid() {
-            function s4() {
-                return Math.floor((1 + Math.random()) * 0x10000)
-                    .toString(16)
-                    .substring(1);
-            }
+        return function (url, $cordovaToast) {
 
-            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-                s4() + '-' + s4() + s4() + s4();
-        }
-
-
-
-        return function (url, $cordovaFileTransfer) {
-
-
-//            var targetPath = "Pictures/Photofi/" + guid() + ".png";
-//            if (cordova.file.externalRootDirectory) {
-//                targetPath = cordova.file.externalRootDirectory + targetPath;
-//            }
-//            else {
-//                targetPath = cordova.file.applicationDirectory + targetPath;
-//            }
-//
-//            if(device.platform == "iOS") {
-//                targetPath = cordova.file.applicationDirectory + guid() + ".png";
-//            }
 
             var success = function(msg){
-                alert(msg);
+                $cordovaToast.show("התמונה הועלתה בהצלחה");
             };
 
             var error = function(err){
@@ -116,9 +91,7 @@ angular.module('photofi.event.service', ['ngCordova'])
             function saveImageToPhone(url_temp, success, error) {
                 var canvas, context, imageDataUrl, imageData;
                 var img = new Image();
-                alert("load" + url_temp);
                 img.onload = function() {
-                    alert("got it");
                     canvas = document.createElement('canvas');
                     canvas.width = img.width;
                     canvas.height = img.height;
@@ -127,7 +100,6 @@ angular.module('photofi.event.service', ['ngCordova'])
                     try {
                         imageDataUrl = canvas.toDataURL('image/jpeg', 1.0);
                         imageData = imageDataUrl.replace(/data:image\/jpeg;base64,/, '');
-                        alert("done");
                         cordova.exec(
                             success,
                             error,
@@ -150,20 +122,6 @@ angular.module('photofi.event.service', ['ngCordova'])
                 }
             }
             saveImageToPhone(url, success, error);
-//            alert(targetPath);
-//            var trustHosts = true;
-//            var options = {};
-//
-//            $cordovaFileTransfer.download(encodeURI(url), targetPath, options, trustHosts)
-//                .then(function (result) {
-//                    console.log("download complete: " + result);
-//                    //TODO: change to toast
-//                    alert("הקובץ ירד בהצלחה!");
-//                }, function (err) {
-//                    alert("error occured" + JSON.stringify(err));
-//                }, function (progress) {
-//                    console.log(progress);
-//                });
         };
     }])
 

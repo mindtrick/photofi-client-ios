@@ -92,7 +92,7 @@ angular.module('photofi.controllers', ['photofi.event.service', 'ngCordova'])
         };
 
     })
-    .controller('FullImageCtrl', function ($scope, $cordovaSocialSharing, $cordovaToast, $cordovaFileTransfer, saveFileFrom, ReportImage) {
+    .controller('FullImageCtrl', function ($scope, $cordovaSocialSharing, $cordovaToast, saveFileFrom, ReportImage) {
 
         $scope.closeModal = function () {
             $scope.modal.hide();
@@ -105,7 +105,7 @@ angular.module('photofi.controllers', ['photofi.event.service', 'ngCordova'])
 
         $scope.download = function ($event) {
             $event.stopPropagation();
-            saveFileFrom($scope.imageSrc, $cordovaFileTransfer);
+            saveFileFrom($scope.imageSrc, $cordovaToast);
         };
 
         $scope.share = function ($event) {
