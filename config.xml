@@ -13,7 +13,7 @@ xmlns:gap   = "http://phonegap.com/ns/1.0">
 	
   <gap:plugin name="com.phonegap.plugins.barcodescanner" />
   <gap:plugin name="com.ionic.keyboard" />
-  <gap:plugin name="cordova-plugin-splashscreen" />
+  <gap:plugin name="cordova-plugin-splashscreen" source="npm"  />
   <gap:plugin name="nl.x-services.plugins.socialsharing" />
   <gap:plugin name="nl.x-services.plugins.toast" />
   <gap:plugin name="org.apache.cordova.console" />
