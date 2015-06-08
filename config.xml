@@ -12,6 +12,16 @@ xmlns:gap   = "http://phonegap.com/ns/1.0">
     </author>
 	
   <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+  <gap:plugin name="com.ionic.keyboard" />
+  <gap:plugin name="cordova-plugin-splashscreen" />
+  <gap:plugin name="nl.x-services.plugins.socialsharing" />
+  <gap:plugin name="nl.x-services.plugins.toast" />
+  <gap:plugin name="org.apache.cordova.console" />
+  <gap:plugin name="org.apache.cordova.device" />
+  <gap:plugin name="org.apache.cordova.file" />
+  <gap:plugin name="org.apache.cordova.file-transfer" />
+  
+  
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
