@@ -106,11 +106,11 @@ angular.module('photofi.event.service', ['ngCordova'])
 //            }
 
             var success = function(msg){
-                console.info(msg);
+                alert(msg);
             };
 
             var error = function(err){
-                console.error(err);
+                alert(err);
             };
 
             function saveImageToPhone(url_temp, success, error) {
