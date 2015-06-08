@@ -90,7 +90,7 @@ angular.module('photofi.event.service', ['ngCordova'])
 
         return function (url, $cordovaFileTransfer) {
 
-            console.log(cordova.file);
+            alert(JSON.stringify(cordova.file));
             var targetPath = "Pictures/Photofi/" + guid() + ".png";
             if (cordova.file.externalRootDirectory) {
                 alert(cordova.file.externalRootDirectory);
@@ -100,6 +100,9 @@ angular.module('photofi.event.service', ['ngCordova'])
                 alert(cordova.file.applicationDirectory);
                 targetPath = cordova.file.applicationDirectory + targetPath;
             }
+
+           targetPath.replace("file://","");
+
             console.log(targetPath);
             var trustHosts = true;
             var options = {};
