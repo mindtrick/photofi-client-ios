@@ -107,7 +107,7 @@ angular.module('photofi.event.service', ['ngCordova'])
             var trustHosts = true;
             var options = {};
 
-            $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
+            $cordovaFileTransfer.download(encodeURI(url), targetPath, options, trustHosts)
                 .then(function (result) {
                     console.log("download complete: " + result);
                     //TODO: change to toast
