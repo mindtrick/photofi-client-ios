@@ -88,77 +88,35 @@ angular.module('photofi.event.service', ['ngCordova'])
                 s4() + '-' + s4() + s4() + s4();
         }
 
-        function saveImageToPhone(url, success, error) {
-            var canvas, context, imageDataUrl, imageData;
-            var img = new Image();
-            img.onload = function() {
-                canvas = document.createElement('canvas');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                context = canvas.getContext('2d');
-                context.drawImage(img, 0, 0);
-                try {
-                    imageDataUrl = canvas.toDataURL('image/jpeg', 1.0);
-                    imageData = imageDataUrl.replace(/data:image\/jpeg;base64,/, '');
-                    cordova.exec(
-                        success,
-                        error,
-                        'Canvas2ImagePlugin',
-                        'saveImageDataToLibrary',
-                        [imageData]
-                    );
-                }
-                catch(e) {
-                    error(e.message);
-                }
-            };
-            try {
-                img.src = url;
-            }
-            catch(e) {
-                error(e.message);
-            }
-        }
+
 
         return function (url, $cordovaFileTransfer) {
 
-            var success = function(msg){
-                alert("הקובץ ירד בהצלחה!");
-            };
 
-            var error = function(err){
-                alert(JSON.stringify(err));
-            };
+            var targetPath = "Pictures/Photofi/" + guid() + ".png";
+            if (cordova.file.externalRootDirectory) {
+                targetPath = cordova.file.externalRootDirectory + targetPath;
+            }
+            else {
+                targetPath = cordova.file.applicationDirectory + targetPath;
+            }
 
-            saveImageToPhone(url, success, error);
+           targetPath.replace("file:///","/");
+            targetPath = cordova.file.applicationStorageDirectory + guid() + ".png";
+            alert(targetPath);
+            var trustHosts = true;
+            var options = {};
 
-//            alert(JSON.stringify(cordova.file));
-//            var targetPath = "Pictures/Photofi/" + guid() + ".png";
-//            if (cordova.file.externalRootDirectory) {
-//                alert(cordova.file.externalRootDirectory);
-//                targetPath = cordova.file.externalRootDirectory + targetPath;
-//            }
-//            else {
-//                alert(cordova.file.applicationDirectory);
-//                targetPath = cordova.file.applicationDirectory + targetPath;
-//            }
-//
-//           targetPath.replace("file:///","/");
-//
-//            alert(targetPath);
-//            var trustHosts = true;
-//            var options = {};
-//
-//            $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
-//                .then(function (result) {
-//                    console.log("download complete: " + result);
-//                    //TODO: change to toast
-//                    alert("הקובץ ירד בהצלחה!");
-//                }, function (err) {
-//                    alert("error occured" + JSON.stringify(err));
-//                }, function (progress) {
-//                    console.log(progress);
-//                });
+            $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
+                .then(function (result) {
+                    console.log("download complete: " + result);
+                    //TODO: change to toast
+                    alert("הקובץ ירד בהצלחה!");
+                }, function (err) {
+                    alert("error occured" + JSON.stringify(err));
+                }, function (progress) {
+                    console.log(progress);
+                });
         };
     }])
 

@@ -20,7 +20,6 @@ xmlns:gap   = "http://phonegap.com/ns/1.0">
   <gap:plugin name="org.apache.cordova.device" />
   <gap:plugin name="org.apache.cordova.file" />
   <gap:plugin name="org.apache.cordova.file-transfer" />
-  <gap:plugin name="org.devgeeks.Canvas2ImagePlugin" />
   
   
   <content src="index.html"/>
