@@ -6,7 +6,6 @@ angular.module('photofi.controllers', ['photofi.event.service', 'ngCordova'])
 
     .controller('EventsCtrl', function ($scope, $state, $ionicHistory, EventsService) {
         console.log('event ctrl');
-        alert(device.platform);
         $ionicHistory.clearHistory();
         $scope.events = EventsService.events();
 
@@ -95,6 +94,9 @@ angular.module('photofi.controllers', ['photofi.event.service', 'ngCordova'])
     })
     .controller('FullImageCtrl', function ($scope, $cordovaSocialSharing, $cordovaToast, saveFileFrom, ReportImage) {
 
+
+        $scope.notIphone = device.platform == "iOS";
+        
         $scope.closeModal = function () {
             $scope.modal.hide();
         };
