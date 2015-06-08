@@ -94,9 +94,6 @@ angular.module('photofi.controllers', ['photofi.event.service', 'ngCordova'])
     })
     .controller('FullImageCtrl', function ($scope, $cordovaSocialSharing, $cordovaToast, saveFileFrom, ReportImage) {
 
-
-        $scope.notIphone = device.platform == "iOS";
-        
         $scope.closeModal = function () {
             $scope.modal.hide();
         };
