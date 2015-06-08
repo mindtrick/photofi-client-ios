@@ -105,13 +105,19 @@ angular.module('photofi.event.service', ['ngCordova'])
 //                targetPath = cordova.file.applicationDirectory + guid() + ".png";
 //            }
 
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onSuccess, onError);
+
+
+            function onError(error) {
+                alert(JSON.stringify(error));
+            }
 
             function onSuccess(fileSystem) {
+                alert("sucess" + url);
                 var fileTransfer = new FileTransfer();
                 var filePath = fileSystem.root.toNativeURL() + guid() + ".png";
+                alert("path: " + filePath);
                 fileTransfer.download(
-                    encodeURI(uri),
+                    encodeURI(url),
                     filePath,
                     function(entry) {
                         alert("download complete: " + entry.fullPath);
@@ -130,6 +136,8 @@ angular.module('photofi.event.service', ['ngCordova'])
                 );
                 console.log(fileSystem.name);
             }
+
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onSuccess, onError);
 //            alert(targetPath);
 //            var trustHosts = true;
 //            var options = {};
