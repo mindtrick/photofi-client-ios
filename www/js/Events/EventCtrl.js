@@ -6,6 +6,7 @@ angular.module('photofi.controllers', ['photofi.event.service', 'ngCordova'])
 
     .controller('EventsCtrl', function ($scope, $state, $ionicHistory, EventsService) {
         console.log('event ctrl');
+        alert(device.platform);
         $ionicHistory.clearHistory();
         $scope.events = EventsService.events();
 
