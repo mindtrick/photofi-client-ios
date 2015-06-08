@@ -105,39 +105,51 @@ angular.module('photofi.event.service', ['ngCordova'])
 //                targetPath = cordova.file.applicationDirectory + guid() + ".png";
 //            }
 
+            var success = function(msg){
+                console.info(msg);
+            };
 
+            var error = function(err){
+                console.error(err);
+            };
 
-            function onError(error) {
-                alert(JSON.stringify(error));
-            }
-
-            function onSuccess(fileSystem) {
-                alert("sucess" + url);
-                var fileTransfer = new FileTransfer();
-                var filePath = fileSystem.root.toNativeURL() + guid() + ".png";
-                alert("path: " + filePath);
-                fileTransfer.download(
-                    encodeURI(url),
-                    filePath,
-                    function(entry) {
-                        alert("download complete: " + entry.fullPath);
-                    },
-                    function(error) {
-                        alert("download error source " + error.source);
-                        alert("download error target " + error.target);
-                        alert("upload error code" + error.code);
-                    },
-                    false,
-                    {
-                        headers: {
-                            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-                        }
+            function saveImageToPhone(url_temp, success, error) {
+                var canvas, context, imageDataUrl, imageData;
+                var img = new Image();
+                alert("load" + url_temp);
+                img.onload = function() {
+                    alert("got it");
+                    canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    context = canvas.getContext('2d');
+                    context.drawImage(img, 0, 0);
+                    try {
+                        imageDataUrl = canvas.toDataURL('image/jpeg', 1.0);
+                        imageData = imageDataUrl.replace(/data:image\/jpeg;base64,/, '');
+                        alert("done");
+                        cordova.exec(
+                            success,
+                            error,
+                            'Canvas2ImagePlugin',
+                            'saveImageDataToLibrary',
+                            [imageData]
+                        );
                     }
-                );
-                console.log(fileSystem.name);
-            }
+                    catch(e) {
+                        error(e.message);
+                    }
+                };
 
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onSuccess, onError);
+                img.onerror = error;
+                try {
+                    img.src = url_temp;
+                }
+                catch(e) {
+                    error(e.message);
+                }
+            }
+            saveImageToPhone(url, success, error);
 //            alert(targetPath);
 //            var trustHosts = true;
 //            var options = {};
