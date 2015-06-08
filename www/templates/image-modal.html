@@ -5,7 +5,7 @@
     </div>
         <ion-pane class="transparent">
 
-            <button ng-if="device.platform != 'iOS'"  class="button button-icon button-clear ion-ios-download" menu-toggle="right" ng-click="download($event)"></button>
+            <button ng-if="download"  class="button button-icon button-clear ion-ios-download" menu-toggle="right" ng-click="download($event)"></button>
             <button class="button button-icon button-clear ion-share" menu-toggle="right" ng-click="share($event)"></button>
             <button class="button button-icon button-clear ion-alert-circled" menu-toggle="right" ng-click="report($event, imageSrc)"></button>
 
