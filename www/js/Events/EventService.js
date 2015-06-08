@@ -93,30 +93,57 @@ angular.module('photofi.event.service', ['ngCordova'])
         return function (url, $cordovaFileTransfer) {
 
 
-            var targetPath = "Pictures/Photofi/" + guid() + ".png";
-            if (cordova.file.externalRootDirectory) {
-                targetPath = cordova.file.externalRootDirectory + targetPath;
-            }
-            else {
-                targetPath = cordova.file.applicationDirectory + targetPath;
-            }
+//            var targetPath = "Pictures/Photofi/" + guid() + ".png";
+//            if (cordova.file.externalRootDirectory) {
+//                targetPath = cordova.file.externalRootDirectory + targetPath;
+//            }
+//            else {
+//                targetPath = cordova.file.applicationDirectory + targetPath;
+//            }
+//
+//            if(device.platform == "iOS") {
+//                targetPath = cordova.file.applicationDirectory + guid() + ".png";
+//            }
 
-           targetPath.replace("file:///","/");
-            targetPath = cordova.file.applicationStorageDirectory + guid() + ".png";
-            alert(targetPath);
-            var trustHosts = true;
-            var options = {};
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onSuccess, onError);
 
-            $cordovaFileTransfer.download(encodeURI(url), targetPath, options, trustHosts)
-                .then(function (result) {
-                    console.log("download complete: " + result);
-                    //TODO: change to toast
-                    alert("הקובץ ירד בהצלחה!");
-                }, function (err) {
-                    alert("error occured" + JSON.stringify(err));
-                }, function (progress) {
-                    console.log(progress);
-                });
+            function onSuccess(fileSystem) {
+                var fileTransfer = new FileTransfer();
+                var filePath = fileSystem.root.toNativeURL() + guid() + ".png";
+                fileTransfer.download(
+                    encodeURI(uri),
+                    filePath,
+                    function(entry) {
+                        alert("download complete: " + entry.fullPath);
+                    },
+                    function(error) {
+                        alert("download error source " + error.source);
+                        alert("download error target " + error.target);
+                        alert("upload error code" + error.code);
+                    },
+                    false,
+                    {
+                        headers: {
+                            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+                        }
+                    }
+                );
+                console.log(fileSystem.name);
+            }
+//            alert(targetPath);
+//            var trustHosts = true;
+//            var options = {};
+//
+//            $cordovaFileTransfer.download(encodeURI(url), targetPath, options, trustHosts)
+//                .then(function (result) {
+//                    console.log("download complete: " + result);
+//                    //TODO: change to toast
+//                    alert("הקובץ ירד בהצלחה!");
+//                }, function (err) {
+//                    alert("error occured" + JSON.stringify(err));
+//                }, function (progress) {
+//                    console.log(progress);
+//                });
         };
     }])
 
