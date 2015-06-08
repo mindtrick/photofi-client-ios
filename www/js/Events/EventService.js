@@ -93,9 +93,11 @@ angular.module('photofi.event.service', ['ngCordova'])
             console.log(cordova.file);
             var targetPath = "Pictures/Photofi/" + guid() + ".png";
             if (cordova.file.externalRootDirectory) {
+                alert(cordova.file.externalRootDirectory);
                 targetPath = cordova.file.externalRootDirectory + targetPath;
             }
             else {
+                alert(cordova.file.applicationDirectory);
                 targetPath = cordova.file.applicationDirectory + targetPath;
             }
             console.log(targetPath);
@@ -108,7 +110,7 @@ angular.module('photofi.event.service', ['ngCordova'])
                     //TODO: change to toast
                     alert("הקובץ ירד בהצלחה!");
                 }, function (err) {
-                    alert("error code" + err);
+                    alert("error occured" + JSON.stringify(err));
                 }, function (progress) {
                     console.log(progress);
                 });
