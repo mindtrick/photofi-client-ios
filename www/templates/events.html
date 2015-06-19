@@ -4,11 +4,13 @@
                 ng-click="addEvent()"></button>
     </ion-nav-buttons>
     <ion-content>
-        <div ng-model="eventCount" ng-if="eventCount == 0">
-            <p class="no-events">
+        <div class="row no-events" ng-model="eventCount" ng-if="eventCount == 0">
+            <div class="col col-10"></div>
+            <div class="col col-center">
                 להכנסת אירוע חדש
                 לחץ על הפלוס
-            </p>
+            </div>
+            <div class="col col-10"></div>
         </div>
         <ion-list class="dark">
             <!--ui-sref="app.event({event: {{event.eventId}} })"-->

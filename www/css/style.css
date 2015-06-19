@@ -8,12 +8,8 @@ ion-view {
     color: ghostwhite;
     position: fixed;
     text-align: center;
-    top: 40%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    font-size: 2em;
-    padding: 5%;
+    font-size: 1.3em;
+    padding-top:100px;
 }
 
 .view-container {
@@ -116,3 +112,10 @@ ion-view {
     color: rgba(46, 46, 46, 0.64) !important;
 }
 
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
