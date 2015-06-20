@@ -102,12 +102,15 @@ angular.module('photofi.controllers', ['photofi.event.service', 'ngCordova'])
             $event.stopPropagation();
             $scope.isOptionShown = !$scope.isOptionShown;
         };
+        try {
+            if (device && device.platform != 'iOS') {
+                $scope.download = function ($event) {
+                    $event.stopPropagation();
+                    saveFileFrom($scope.imageSrc, $cordovaToast);
+                };
+            }
+        }catch(err){
 
-        if (device && device.platform != 'iOS') {
-            $scope.download = function ($event) {
-                $event.stopPropagation();
-                saveFileFrom($scope.imageSrc, $cordovaToast);
-            };
         }
 
         $scope.share = function ($event) {
