@@ -1,8 +1,8 @@
 /**
  * Created by 758orenh on 3/22/2015.
  */
-var apiUrl = 'http://prod-photofi.rhcloud.com';
-//var apiUrl = 'http://api.photofi.co.il';
+//var apiUrl = 'http://prod-photofi.rhcloud.com';
+var apiUrl = 'http://api.photofi.co.il';
 //var apiUrl = 'http://localhost:8080';
 var privateKey = "Photofi.,-K3y-4_different=httprequests";
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="com.photofi.client" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+  <name>Photofi</name>
+  <description>
+        Photofi client for watch events
+    </description>
+  <author email="hi@ionicframework" href="http://ionicframework.com/">
+      Ionic Framework Team
+    </author>
+  <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
+  <gap:plugin name="com.ionic.keyboard"/>
+  <gap:plugin name="cordova-plugin-splashscreen" source="npm"/>
+  <gap:plugin name="nl.x-services.plugins.socialsharing"/>
+  <gap:plugin name="nl.x-services.plugins.toast"/>
+  <gap:plugin name="org.apache.cordova.console"/>
+  <gap:plugin name="org.apache.cordova.device"/>
+  <gap:plugin name="org.apache.cordova.file"/>
+  <gap:plugin name="org.apache.cordova.file-transfer"/>
+  <gap:plugin name="org.devgeeks.Canvas2ImagePlugin"/>
+  <content src="index.html"/>
+  <access origin="*"/>
+  <preference name="webviewbounce" value="false"/>
+  <preference name="UIWebViewBounce" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="BackupWebStorage" value="none"/>
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashMaintainAspectRatio" value="false"/>
+  <preference name="SplashScreenDelay" value="3000"/>
+  <feature name="StatusBar">
+    <param name="ios-package" value="CDVStatusBar" onload="true"/>
+  </feature>
+  <splash src="splash.png" />
+  <icon src="icon.png" />
+  
+</widget>

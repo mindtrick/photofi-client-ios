@@ -16,7 +16,7 @@ angular.module('photofi', ['ionic', 'photofi.controllers', 'ngCordova'])
             $cordovaSplashscreen.show();
             setTimeout(function() {
                 $cordovaSplashscreen.hide()
-            }, 5000)
+            }, 1000)
         });
     })
 

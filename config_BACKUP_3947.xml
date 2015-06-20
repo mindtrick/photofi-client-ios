@@ -29,6 +29,7 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+<<<<<<< HEAD
   <platform name="android">
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
     <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>
@@ -78,4 +79,9 @@
     <splash src="resources/ios/splash/Default~iphone.png" width="320" height="480"/>
   </platform>
   <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
+=======
+  <splash src="splash.png" />
+  <icon src="icon.png" />
+  
+>>>>>>> a43f8efddf0647cf898da55de44a9c8825a79ee6
 </widget>
