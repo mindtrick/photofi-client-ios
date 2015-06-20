@@ -1,38 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.photofi.client" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-  <name>Photofi</name>
-  <description>
-        Photofi client for watch events
-    </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
-    </author>
-  <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
-  <gap:plugin name="com.ionic.keyboard"/>
-  <gap:plugin name="cordova-plugin-splashscreen" source="npm"/>
-  <gap:plugin name="nl.x-services.plugins.socialsharing"/>
-  <gap:plugin name="nl.x-services.plugins.toast"/>
-  <gap:plugin name="org.apache.cordova.console"/>
-  <gap:plugin name="org.apache.cordova.device"/>
-  <gap:plugin name="org.apache.cordova.file"/>
-  <gap:plugin name="org.apache.cordova.file-transfer"/>
-  <gap:plugin name="org.devgeeks.Canvas2ImagePlugin"/>
-  <content src="index.html"/>
-  <access origin="*"/>
-  <preference name="webviewbounce" value="false"/>
-  <preference name="UIWebViewBounce" value="false"/>
-  <preference name="DisallowOverscroll" value="true"/>
-  <preference name="BackupWebStorage" value="none"/>
-  <preference name="SplashScreen" value="screen"/>
-  <preference name="SplashMaintainAspectRatio" value="false"/>
-  <preference name="SplashScreenDelay" value="3000"/>
-  <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true"/>
-  </feature>
-  <platform name="android">
-	<splash src="splash.png" />
-	<icon src="icon.png" />
-    <icon src="resources\android\icon\drawable-ldpi-icon.png" density="ldpi"/>
+﻿
+<icon src="resources\android\icon\drawable-ldpi-icon.png" density="ldpi"/>
     <icon src="resources\android\icon\drawable-mdpi-icon.png" density="mdpi"/>
     <icon src="resources\android\icon\drawable-hdpi-icon.png" density="hdpi"/>
     <icon src="resources\android\icon\drawable-xhdpi-icon.png" density="xhdpi"/>
@@ -52,7 +19,10 @@
     <splash src="resources\android\splash\drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
 	
 	
-	<!-- iPhone 6 / 6+ -->
+		
+
+
+<!-- iPhone 6 / 6+ -->
 	<icon src="resources\ios\icon\appicon-60@3x.png" gap:platform="ios" width="180" height="180" />
 
 	<!-- iPhone / iPod Touch  -->
@@ -107,7 +77,3 @@
 	<splash src="resources\ios\splash\Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2048" />
 	<splash src="resources\ios\splash\Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />
 	
-	
-  </platform>
-  <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
-</widget>
